@@ -25,6 +25,20 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+        }
+
+        /* Dark overlay for better contrast */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+            pointer-events: none;
         }
 
         @keyframes gradientShift {
@@ -82,11 +96,11 @@
             z-index: 2;
             text-align: center;
             padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             margin-bottom: 30px;
         }
 
@@ -94,18 +108,20 @@
         .greeting-text h1 {
             font-size: 4.5rem;
             margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             position: relative;
             display: inline-block;
+            font-weight: 700;
         }
 
         .text-animation {
-            background: linear-gradient(90deg, #ff8a00, #e52e71, #9b59b6, #3498db);
+            background: linear-gradient(90deg, #ffcc00, #ff8a00, #ff3366, #9933ff);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: textGradient 5s ease infinite, float 3s ease-in-out infinite;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         @keyframes textGradient {
@@ -123,27 +139,31 @@
         .subtitle {
             font-size: 1.5rem;
             margin-bottom: 40px;
-            opacity: 0.9;
+            opacity: 0.95;
             animation: fadeIn 2s ease;
+            font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         /* Quote Section */
         .quote-section {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 15px;
             padding: 30px;
             margin: 30px auto;
             max-width: 800px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             animation: slideUp 1.5s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .quote-icon {
             font-size: 2rem;
-            opacity: 0.3;
+            opacity: 0.4;
             position: absolute;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .quote-icon.left {
@@ -164,23 +184,28 @@
             line-height: 1.5;
             position: relative;
             z-index: 2;
+            font-weight: 500;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         .quote-author {
             font-size: 1.2rem;
-            opacity: 0.8;
+            opacity: 0.9;
             text-align: right;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         /* Prayer Section */
         .prayer-section {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 15px;
             padding: 30px;
             margin: 30px auto;
             max-width: 800px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             animation: slideUp 2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .prayer-title {
@@ -190,23 +215,28 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .prayer-text {
             font-size: 1.3rem;
             line-height: 1.6;
             text-align: left;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         /* Calendar styling */
         .calendar {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: 15px;
             padding: 25px;
             margin: 30px auto;
             max-width: 500px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             animation: slideUp 1.5s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .month-indicator {
@@ -215,7 +245,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .month-name {
@@ -223,11 +253,13 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
         .year {
             font-size: 1.5rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         .calendar-grid {
@@ -240,6 +272,7 @@
             font-weight: bold;
             padding: 10px 0;
             text-align: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         .calendar-day {
@@ -250,6 +283,8 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            font-weight: 500;
         }
 
         .calendar-day:hover {
@@ -258,8 +293,8 @@
         }
 
         .calendar-day.today {
-            background: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 0 15px gold;
+            background: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             font-weight: bold;
         }
 
@@ -358,8 +393,9 @@
         .floating-element {
             position: absolute;
             font-size: 2rem;
-            opacity: 0.7;
+            opacity: 0.6;
             animation: floatAround 15s linear infinite;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .floating-element:nth-child(1) {
@@ -413,23 +449,26 @@
         }
 
         .countdown-item {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             padding: 15px;
             min-width: 100px;
             text-align: center;
             animation: pulse 2s infinite;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .countdown-value {
             font-size: 2.5rem;
             font-weight: bold;
             display: block;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .countdown-label {
             font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
         @keyframes pulse {
@@ -444,7 +483,8 @@
             margin-top: 40px;
             padding: 20px;
             font-size: 1rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
 
         /* Animations */
@@ -462,6 +502,82 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Notification button styles */
+        .notification-btn {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        .notification-btn:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .notification-btn.enabled {
+            background: rgba(46, 204, 113, 0.3);
+            border-color: rgba(46, 204, 113, 0.5);
+        }
+
+        /* Daily theme colors - IMPROVED FOR BETTER CONTRAST */
+        .theme-day-1 { background: linear-gradient(135deg, #0d1b4c, #8a1a1a, #d9a01c); }
+        .theme-day-2 { background: linear-gradient(135deg, #0a2640, #3a2563, #c12d4a); }
+        .theme-day-3 { background: linear-gradient(135deg, #0f172a, #0a2640, #3a2563); }
+        .theme-day-4 { background: linear-gradient(135deg, #142857, #1e3a8a, #4369b2); }
+        .theme-day-5 { background: linear-gradient(135deg, #003155, #5a7c0a, #d9c000); }
+        .theme-day-6 { background: linear-gradient(135deg, #3200b0, #6a20c2, #3200b0); }
+        .theme-day-7 { background: linear-gradient(135deg, #006076, #5ac7a6, #006076); }
+        .theme-day-8 { background: linear-gradient(135deg, #cc3349, #cc3a22, #cc3349); }
+        .theme-day-9 { background: linear-gradient(135deg, #0d7a68, #2bbf6a, #0d7a68); }
+        .theme-day-10 { background: linear-gradient(135deg, #2d4cbc, #8a4da9, #2d4cbc); }
+        .theme-day-11 { background: linear-gradient(135deg, #2a1459, #a54c5f, #d99661); }
+        .theme-day-12 { background: linear-gradient(135deg, #0d121e, #1a2b3d, #0d121e); }
+        .theme-day-13 { background: linear-gradient(135deg, #c45535, #d99239, #c45535); }
+        .theme-day-14 { background: linear-gradient(135deg, #633a75, #a83db6, #633a75); }
+        .theme-day-15 { background: linear-gradient(135deg, #3d2b27, #1e5c34, #3d2b27); }
+        .theme-day-16 { background: linear-gradient(135deg, #1a74c6, #c45a9d, #1a74c6); }
+        .theme-day-17 { background: linear-gradient(135deg, #4d8a5f, #3a82ad, #4d8a5f); }
+        .theme-day-18 { background: linear-gradient(135deg, #c74686, #cc4646, #c74686); }
+        .theme-day-19 { background: linear-gradient(135deg, #3553a7, #101d38, #3553a7); }
+        .theme-day-20 { background: linear-gradient(135deg, #b875cb, #c7465c, #b875cb); }
+        .theme-day-21 { background: linear-gradient(135deg, #30a182, #104a7d, #30a182); }
+        .theme-day-22 { background: linear-gradient(135deg, #cc774d, #cc4e52, #cc774d); }
+        .theme-day-23 { background: linear-gradient(135deg, #5f00cc, #a600cc, #5f00cc); }
+        .theme-day-24 { background: linear-gradient(135deg, #1a4fcc, #1a38cc, #1a4fcc); }
+        .theme-day-25 { background: linear-gradient(135deg, #c11f0d, #c58f15, #c11f0d); }
+        .theme-day-26 { background: linear-gradient(135deg, #4d7366, #c46117, #4d7366); }
+        .theme-day-27 { background: linear-gradient(135deg, #a54669, #d09a77, #a54669); }
+        .theme-day-28 { background: linear-gradient(135deg, #6a7781, #bdc5c9, #6a7781); }
+        .theme-day-29 { background: linear-gradient(135deg, #a83343, #5a175b, #a83343); }
+        .theme-day-30 { background: linear-gradient(135deg, #3a7c8c, #a87d30, #3a7c8c); }
+        .theme-day-31 { background: linear-gradient(135deg, #cc0077, #331a30, #cc0077); }
+        
+        .theme-special {
+            background: linear-gradient(135deg, 
+                #cc0000, #cc6600, #cccc00, #00cc00, 
+                #00cccc, #0000cc, #6600cc, #cc00cc);
+            background-size: 400% 400%;
+            animation: rainbow 15s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Reduced motion preference */
@@ -528,7 +644,7 @@
             .calendar-day {
                 padding: 5px;
                 font-size: 0.9rem;
-                border-radius: 12px; /* avoid too-small circles */
+                border-radius: 12px;
             }
             
             .quote-text {
@@ -551,79 +667,6 @@
             .countdown-value {
                 font-size: 1.5rem;
             }
-        }
-
-        /* Notification button styles - ADDED */
-        .notification-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin: 20px auto;
-            transition: all 0.3s ease;
-        }
-        
-        .notification-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-        
-        .notification-btn.enabled {
-            background: rgba(46, 204, 113, 0.3);
-            border-color: rgba(46, 204, 113, 0.5);
-        }
-
-        /* Daily theme colors - ADDED */
-        .theme-day-1 { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); }
-        .theme-day-2 { background: linear-gradient(135deg, #0f3460, #533483, #e94560); }
-        .theme-day-3 { background: linear-gradient(135deg, #16213e, #0f3460, #533483); }
-        .theme-day-4 { background: linear-gradient(135deg, #1e3c72, #2a5298, #5b8dc9); }
-        .theme-day-5 { background: linear-gradient(135deg, #00416a, #799f0c, #ffe000); }
-        .theme-day-6 { background: linear-gradient(135deg, #4a00e0, #8e2de2, #4a00e0); }
-        .theme-day-7 { background: linear-gradient(135deg, #007991, #78ffd6, #007991); }
-        .theme-day-8 { background: linear-gradient(135deg, #ff416c, #ff4b2b, #ff416c); }
-        .theme-day-9 { background: linear-gradient(135deg, #11998e, #38ef7d, #11998e); }
-        .theme-day-10 { background: linear-gradient(135deg, #4568dc, #b06ab3, #4568dc); }
-        .theme-day-11 { background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b); }
-        .theme-day-12 { background: linear-gradient(135deg, #141e30, #243b55, #141e30); }
-        .theme-day-13 { background: linear-gradient(135deg, #f46b45, #eea849, #f46b45); }
-        .theme-day-14 { background: linear-gradient(135deg, #834d9b, #d04ed6, #834d9b); }
-        .theme-day-15 { background: linear-gradient(135deg, #5a3f37, #2c7744, #5a3f37); }
-        .theme-day-16 { background: linear-gradient(135deg, #3494e6, #ec6ead, #3494e6); }
-        .theme-day-17 { background: linear-gradient(135deg, #67b26f, #4ca2cd, #67b26f); }
-        .theme-day-18 { background: linear-gradient(135deg, #f857a6, #ff5858, #f857a6); }
-        .theme-day-19 { background: linear-gradient(135deg, #4b6cb7, #182848, #4b6cb7); }
-        .theme-day-20 { background: linear-gradient(135deg, #f093fb, #f5576c, #f093fb); }
-        .theme-day-21 { background: linear-gradient(135deg, #43cea2, #185a9d, #43cea2); }
-        .theme-day-22 { background: linear-gradient(135deg, #ff9966, #ff5e62, #ff9966); }
-        .theme-day-23 { background: linear-gradient(135deg, #7f00ff, #e100ff, #7f00ff); }
-        .theme-day-24 { background: linear-gradient(135deg, #396afc, #2948ff, #396afc); }
-        .theme-day-25 { background: linear-gradient(135deg, #f12711, #f5af19, #f12711); }
-        .theme-day-26 { background: linear-gradient(135deg, #659999, #f4791f, #659999); }
-        .theme-day-27 { background: linear-gradient(135deg, #dd5e89, #f7bb97, #dd5e89); }
-        .theme-day-28 { background: linear-gradient(135deg, #8e9eab, #eef2f3, #8e9eab); }
-        .theme-day-29 { background: linear-gradient(135deg, #da4453, #89216b, #da4453); }
-        .theme-day-30 { background: linear-gradient(135deg, #4da0b0, #d39d38, #4da0b0); }
-        .theme-day-31 { background: linear-gradient(135deg, #ff0099, #493240, #ff0099); }
-        
-        .theme-special {
-            background: linear-gradient(135deg, 
-                #ff0000, #ff8000, #ffff00, #00ff00, 
-                #00ffff, #0000ff, #8000ff, #ff00ff);
-            background-size: 400% 400%;
-            animation: rainbow 15s ease infinite;
-        }
-        
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
